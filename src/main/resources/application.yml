@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/board_service?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
-    username: root
-    password: 1210+sun
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: none
@@ -13,3 +13,10 @@ spring:
       jdbc:
         batch_size: 200
     open-in-view: false
+
+  jwt:
+    secret-key: ${JWT_SECRET_KEY}
+    header: ${JWT_HEADER}
+    prefix: ${JWT_PREFIX}
+    access-exp: ${ACCESS_EXP}
+    refresh-exp: ${REFRESH_EXP}
